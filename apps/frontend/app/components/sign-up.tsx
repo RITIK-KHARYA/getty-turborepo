@@ -8,28 +8,22 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { signIn } from "@/lib/auth-client";
-import { error } from "console";
+import { signIn, signUp } from "@/lib/auth-client";
 
 const formSchema = z.object({
   email: z.string().email(),
   password: z.string().min(8),
 });
 
-export function SignInForm() {
+export function SignUpForm() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    // errorMessage: {
-    //   email: "Invalid email",
-    //   password: "Password must be at least 8 characters",
-    // },
     defaultValues: {
       email: "",
       password: "",
@@ -37,7 +31,8 @@ export function SignInForm() {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    await signIn.email({
+    await signUp.email({
+      name: values.email,
       email: values.email,
       password: values.password,
     });
@@ -51,7 +46,7 @@ export function SignInForm() {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email</FormLabel>
+              <FormLabel>email</FormLabel>
               <FormControl>
                 <Input placeholder="test@gmail.com" {...field} />
               </FormControl>
@@ -66,7 +61,7 @@ export function SignInForm() {
             <FormItem>
               <FormLabel>Password</FormLabel>
               <FormControl>
-                <Input placeholder="password" {...field} />
+                <Input placeholder="shadcn" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
