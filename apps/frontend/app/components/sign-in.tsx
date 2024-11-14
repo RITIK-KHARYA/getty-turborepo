@@ -40,6 +40,7 @@ export function SignInForm() {
     await signIn.email({
       email: values.email,
       password: values.password,
+      callbackURL: "/dashboard",
     });
   }
 
