@@ -9,7 +9,7 @@ export default function AppBar() {
   const logo = "/logomaiin.svg";
   const router = useRouter();
   return (
-    <div className="flex w-[60%] justify-normal items-center  rounded-xl  bg-transparent border-neutral-300 border-[1px] mt-8 ">
+    <div className="flex w-[60%] justify-normal items-center  rounded-2xl bg-neutral-900/30 text-sm border-neutral-300 border-[1px] mt-8 ">
       <div className="flex justify-between items-center w-full h-16 p-2">
         <div className="flex gap-x-3 ">
           <Image

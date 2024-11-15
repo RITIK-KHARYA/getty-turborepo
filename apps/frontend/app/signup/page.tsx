@@ -15,7 +15,10 @@ export default function Page() {
             <button className="bg-neutral-700 text-white px-4 py-2 rounded hover:bg-neutral-600 transition">
               Google
             </button>
-            <button className="bg-neutral-700 text-white px-4 py-2 rounded hover:bg-neutral-600 transition">
+            <button
+              className="bg-neutral-700 text-white px-4 py-2 rounded hover:bg-neutral-600 transition"
+              onClick={() => router.push("/api/auth/callback/github")}
+            >
               GitHub
             </button>
           </div>
