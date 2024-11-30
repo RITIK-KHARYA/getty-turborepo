@@ -1,28 +1,31 @@
 import { betterAuth } from "better-auth";
 import { prismaAdapter } from "better-auth/adapters/prisma";
-import { PrismaClient } from "@prisma/client";
+import { prisma } from "@repo/db";
 
-const prisma = new PrismaClient();
+
 export const auth = betterAuth({
   database: prismaAdapter(prisma, {
-    provider: "postgresql",
-  }),
+    provider: "postgresql"
+  }) as any,
   socialProviders: {
-    google: {
-      clientId: process.env.GOOGLE_CLIENT_ID as string,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
-    },
     github: {
       clientId: process.env.GITHUB_CLIENT_ID as string,
       clientSecret: process.env.GITHUB_CLIENT_SECRET as string,
     },
+    discord: {
+      clientId: process.env.DISCORD_CLIENT_ID!,
+      clientSecret: process.env.DISCORD_CLIENT_SECRET!,
+    },
   },
   session: {
-    expiresIn: 60 * 60 * 24 * 7, //will expire after the 7 days dude \
+    expiresIn: 60 * 60 * 24 * 7, 
     updateAge: 60 * 60 * 24,
   },
   emailAndPassword: {
     enabled: true,
+    autoSignIn:true
+
   },
   baseURL: "http://localhost:3000",
+  
 });

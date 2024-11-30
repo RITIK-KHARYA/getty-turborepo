@@ -1,6 +1,7 @@
 "use client";
 
 import { SignUpForm } from "@/components/sign-up";
+import { signInWithGithub,  signInWithDiscord } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
 
 export default function Page() {
@@ -12,14 +13,21 @@ export default function Page() {
         <div className="flex flex-col items-center space-y-4 mb-6">
           <div className="text-white font-semibold text-lg">Sign Up with</div>
           <div className="flex gap-4">
-            <button className="bg-neutral-700 text-white px-4 py-2 rounded hover:bg-neutral-600 transition">
-              Google
+            <button
+              className="bg-neutral-700 text-white px-4 py-2 rounded hover:bg-neutral-600 transition"
+              onClick={() => {
+                signInWithGithub();
+              }}
+            >
+              GitHub
             </button>
             <button
               className="bg-neutral-700 text-white px-4 py-2 rounded hover:bg-neutral-600 transition"
-              onClick={() => router.push("/api/auth/callback/github")}
+              onClick={() => {
+                signInWithDiscord();
+              }}
             >
-              GitHub
+              Discord
             </button>
           </div>
         </div>
