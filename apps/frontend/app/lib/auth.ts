@@ -26,6 +26,6 @@ export const auth = betterAuth({
     autoSignIn:true
 
   },
-  baseURL: "http://localhost:3000",
+  baseURL: "http://localhost:3002",
   
 });

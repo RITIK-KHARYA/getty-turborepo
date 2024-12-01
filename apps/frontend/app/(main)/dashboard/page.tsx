@@ -1,9 +1,14 @@
+import React from "react";
 import { getSession } from "../../../actions/session";
+import { DialogCloseButton } from "@/components/custom/custom-dialog";
 
-export default async function Dashboard() {
+export  default async function () {
   const session = await getSession();
-  if (!session) {
-    return <div>Not logged in</div>;
-  }
-  return <pre> {JSON.stringify(session,null,4)}</pre>;
+  
+  return (
+    <div>
+      <DialogCloseButton />
+      <pre>{JSON.stringify(session, null, 4)}</pre>
+    </div>
+  );
 }
