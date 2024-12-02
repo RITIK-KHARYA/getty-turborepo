@@ -74,14 +74,14 @@ export default function Home() {
 
         {/* Video Section */}
         <div className="relative w-[1000px] mx-auto pointer-events-auto z-10 mt-24">
-          <div className="shadow-[0px_0px_300px_0px_#5b21b6] top-full left-0 bg-black absolute -z-10 flex max-w-screen-lg w-full aspect-video flex-col items-center justify-center overflow-hidden rounded- border bg-background">
+          {/* <div className="shadow-[0px_0px_300px_0px_#5b21b6] top-full left-0 bg-black absolute -z-10 flex max-w-screen-lg w-full aspect-video flex-col items-center justify-center overflow-hidden rounded- border bg-background">
             <HeroVideoDialog
               videoSrc="https://www.youtube.com/embed/U14GpQ5K03g"
               thumbnailSrc="/thumbnail.jpg"
               thumbnailAlt="Video Thumbnail"
             />
             <BorderBeam size={250} duration={12} delay={5} />
-          </div>
+          </div> */}
         </div>
       </div>
 
@@ -93,6 +93,10 @@ export default function Home() {
         color={particlesColor}
         refresh
       />
+
+      <div className=" ">
+        <Footer/>
+      </div>
     </div>
   );
 }

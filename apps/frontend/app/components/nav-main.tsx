@@ -34,7 +34,7 @@ export function   NavMain({
 }) {
   return (
     <SidebarGroup>
-      <SidebarGroupLabel>Platform</SidebarGroupLabel>
+      <SidebarGroupLabel>Station...</SidebarGroupLabel>
       <SidebarMenu>
         {items.map((item) => (
           <Collapsible
@@ -45,7 +45,7 @@ export function   NavMain({
           >
             <SidebarMenuItem>
               <CollapsibleTrigger asChild>
-                <SidebarMenuButton tooltip={item.title} className="h-20 flex flex-row gap-x-10" >
+                <SidebarMenuButton tooltip={item.title} className="h-10 flex flex-row gap-x-10" >
                   {item.icon && <item.icon/>}
                   <span>{item.title}</span>
                   <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90 " />

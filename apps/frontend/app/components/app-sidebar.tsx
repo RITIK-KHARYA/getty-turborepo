@@ -3,13 +3,16 @@
 import * as React from "react";
 import {
   AudioWaveform,
+  Bell,
   BookOpen,
   Bot,
   Command,
   Frame,
   GalleryVerticalEnd,
+  House,
   Map,
   PieChart,
+  Settings,
   Settings2,
   SquareTerminal,
 } from "lucide-react";
@@ -72,40 +75,35 @@ const data = {
         },
       ],
     },
-  
-    
-
-   
   ],
   projects: [
     {
-      name: "Design Engineering",
-      url: "#",
-      icon: Frame,
+      name: "Home",
+      url: "/dashboard",
+      icon: House,
     },
     {
-      name: "Sales & Marketing",
-      url: "#",
-      icon: PieChart,
+      name: "Notification",
+      url: "/notifications",
+      icon: Bell,
     },
     {
-      name: "Travel",
-      url: "#",
-      icon: Map,
+      name: "Settings",
+      url: "/settings",
+      icon: Settings,
     },
   ],
 };
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
-    <Sidebar collapsible="icon" {...props}>
-      <SidebarHeader>
-        {/* <TeamSwitcher teams={data.teams} /> */}
-       <Sidebarheader />
+    <Sidebar collapsible="icon" {...props} className="">
+      <SidebarHeader className=" ">
+        <h1 className="bg-black rounded-full flex items-center justify-center">logo</h1>
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={data.navMain} />
         <NavProjects projects={data.projects} />
+        <NavMain items={data.navMain} />
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={data.user} />
