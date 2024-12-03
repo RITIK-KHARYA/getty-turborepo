@@ -88,6 +88,11 @@ const data = {
       icon: Bell,
     },
     {
+      name: "Orbits",
+      url: "/orbits",
+      icon: Bell,
+    },
+    {
       name: "Settings",
       url: "/settings",
       icon: Settings,

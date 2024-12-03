@@ -25,7 +25,7 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar";
-import { Suspense } from "react";
+
 import { Skeleton } from "./ui/skeleton";
 
 export function NavUser({
@@ -38,6 +38,7 @@ export function NavUser({
   };
 }) {
   const { isMobile } = useSidebar();
+  
 
   return (
     <SidebarMenu>

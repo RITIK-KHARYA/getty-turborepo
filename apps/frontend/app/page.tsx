@@ -11,6 +11,7 @@ import Particles from "./components/ui/particles";
 import HeroVideoDialog from "./components/ui/hero-video-dialog";
 import { HoverBorderGradient } from "./components/ui/hover-border-gradient";
 import { BorderBeam } from "./components/ui/border-beam";
+import { Button } from "./components/ui/button";
 
 export default function Home() {
   // Text content for the hero section
@@ -70,18 +71,21 @@ export default function Home() {
             Getty welcomes you to the world where you forget everything within a
             day. Share the platform—your thoughts are invisible to the world.
           </span>
+          <div className="w-full flex items-center justify-center mt-10">
+           //there will be button here
+          </div>
         </div>
 
         {/* Video Section */}
         <div className="relative w-[1000px] mx-auto pointer-events-auto z-10 mt-24">
-          {/* <div className="shadow-[0px_0px_300px_0px_#5b21b6] top-full left-0 bg-black absolute -z-10 flex max-w-screen-lg w-full aspect-video flex-col items-center justify-center overflow-hidden rounded- border bg-background">
+          <div className="shadow-[0px_0px_300px_0px_#5b21b6] top-full left-0 bg-black absolute -z-10 flex max-w-screen-lg w-full aspect-video flex-col items-center justify-center overflow-hidden rounded- border bg-background">
             <HeroVideoDialog
               videoSrc="https://www.youtube.com/embed/U14GpQ5K03g"
               thumbnailSrc="/thumbnail.jpg"
               thumbnailAlt="Video Thumbnail"
             />
             <BorderBeam size={250} duration={12} delay={5} />
-          </div> */}
+          </div>
         </div>
       </div>
 
@@ -95,7 +99,7 @@ export default function Home() {
       />
 
       <div className=" ">
-        <Footer/>
+        <Footer />
       </div>
     </div>
   );
