@@ -1,6 +1,6 @@
 import { createAuthClient } from "better-auth/react";
 
-export const { signIn, signUp, useSession } = createAuthClient({
+export const { signIn, signUp, useSession,signOut } = createAuthClient({
   baseURL: "http://localhost:3002",
 });
 
@@ -16,3 +16,4 @@ export const signInWithDiscord = async () => {
     callbackURL: "/dashboard",
   });
 };
+

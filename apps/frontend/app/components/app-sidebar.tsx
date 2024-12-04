@@ -104,14 +104,17 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar collapsible="icon" {...props} className="">
       <SidebarHeader className=" ">
-        <h1 className="bg-black rounded-full flex items-center justify-center">logo</h1>
+        <h1 className="bg-black rounded-full flex items-center justify-center">
+          logo
+        </h1>
       </SidebarHeader>
       <SidebarContent>
         <NavProjects projects={data.projects} />
         <NavMain items={data.navMain} />
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={data.user} />
+        <NavUser />
+        {/* need to make profile dialog box like discord */}
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>
