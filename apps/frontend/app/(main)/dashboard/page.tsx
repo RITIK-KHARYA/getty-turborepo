@@ -1,6 +1,8 @@
 import React from "react";
 import { getSession } from "../../../actions/session";
 import { HomeIcon, House } from "lucide-react";
+import { ProfileForm } from "@/components/custom/custom-dialog";
+
 
 export default async function () {
   const session = await getSession();
@@ -8,11 +10,9 @@ export default async function () {
 
   return (
     <div className="">
-      <div className="ml-2 pointer-events-none font-semibold shadow-sm">
-        <p className=" sticky text-xl  gap-x-1 inline-flex">
-          <House size={24} className=" " />
-          Home
-        </p>
+      <div className="ml-2 font-semibold shadow-sm">
+        <ProfileForm />
+
       </div>
     </div>
   );

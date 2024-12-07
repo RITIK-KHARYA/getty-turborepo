@@ -1,5 +1,8 @@
+"use client";
+
 import SearchDemo from "./custom-search";
 import { Button } from "../ui/button";
+import { ProfileForm } from "./custom-dialog";
 
 interface HeaderProps {}
 
@@ -11,7 +14,7 @@ export default function Header() {
           <div className="flex">
             <SearchDemo />
           </div>
-          <Button className="bg-neutral-800 text-white rounded-lg h-9 w-24 text-xs hover:bg-neutral-700 ">
+          <Button className="bg-neutral-800 text-white rounded-lg h-9 w-24 text-xs hover:bg-neutral-700 "onClick={() => ProfileForm()}>
             Create Space
           </Button>
           <Button className="bg-blue-500 text-white rounded-lg h-9 w-24 text-xs hover:bg-blue-600">
